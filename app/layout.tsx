@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from 'next/font/local';
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react"
 
 const bluntFont = localFont({
   src: '../font/Fontspring-DEMO-blunt-semicon.otf',
@@ -24,6 +25,7 @@ export default function RootLayout({
       </head> */}
       <body className={bluntFont.className}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
