@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from 'next/font/local';
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const bluntFont = localFont({
+  src: '../font/Fontspring-DEMO-blunt-semicon.otf',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +19,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      {/* <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      </head> */}
+      <body className={bluntFont.className}>
+        {children}
+      </body>
     </html>
   );
 }
